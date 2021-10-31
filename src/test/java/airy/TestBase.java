@@ -21,7 +21,7 @@ public class TestBase {
 //добавляем для запуска в удаленном браузере
         Configuration.startMaximized = true;
         //указываем использовать удаленный драйвер + базовая авторизация user1 1234
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @AfterEach
