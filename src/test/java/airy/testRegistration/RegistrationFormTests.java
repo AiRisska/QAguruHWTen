@@ -38,7 +38,7 @@ public class RegistrationFormTests extends TestBase {
                 .clickOnByText("#hobbiesWrapper", hobbyOne)
                 .clickOnByText("#hobbiesWrapper", hobbyTwo);
 
-        registrationPage.uploadFileIMG("#uploadPicture", nameFile);
+//        registrationPage.uploadFileIMG("#uploadPicture", nameFile);
 
         registrationPage
                 .clickOnTextInWrapper("#state", "#stateCity-wrapper", state)
@@ -54,7 +54,7 @@ public class RegistrationFormTests extends TestBase {
                 .checkResultsValue("Date of Birth", dayBirth+" "+ monthBirth+","+ yearBirth)
                 .checkResultsValue("Subjects", subject)
                 .checkResultsValue("Hobbies", hobbyOne+", "+ hobbyTwo)
-                .checkResultsValue("Picture", nameFile)
+//                .checkResultsValue("Picture", nameFile)
                 .checkResultsValue("Address", address)
                 .checkResultsValue("State and City", state+" "+ city);
 
