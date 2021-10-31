@@ -8,8 +8,7 @@ import airy.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 import static airy.TestData.*;
-
-
+import static io.qameta.allure.Allure.step;
 
 public class RegistrationFormTests extends TestBase {
 
@@ -20,33 +19,38 @@ public class RegistrationFormTests extends TestBase {
 
     @Test
     void practiceFormTest() {
-        open.openRegistration("Student Registration Form");
+        step ("Открыть страницу регистрационной формы", () -> {
+            open.openRegistration("Student Registration Form");
+        });
 
+        step("Заполнить данные", () -> {
         registrationPage
                 .setText("#firstName", name)
                 .setText("#lastName", family)
                 .setText("#userEmail", email)
                 .setText("#userNumber", mobile)
                 .setText("#currentAddress", address);
-
         registrationPage.calendar.setDate(dayBirth,monthBirth,yearBirth);
-
         registrationPage.setTextWithEnter("#subjectsInput", subject);
-
         registrationPage
                 .clickOnByText("#genterWrapper", gender)
                 .clickOnByText("#hobbiesWrapper", hobbyOne)
                 .clickOnByText("#hobbiesWrapper", hobbyTwo);
-
 //        registrationPage.uploadFileIMG("#uploadPicture", nameFile);
-
         registrationPage
                 .clickOnTextInWrapper("#state", "#stateCity-wrapper", state)
                 .clickOnTextInWrapper("#city","#stateCity-wrapper", city);
+        });
 
+        step("Нажать Submit", () -> {
         button.clickButton("#submit");
+        });
 
+        step("Проверка названия итоговой формы", () -> {
         check.checkHaveText(".modal-title", "Thanks for submitting the form");
+        });
+
+        step("Проверка заполнения", () -> {
         check.checkResultsValue("Student Name", name+" "+ family)
                 .checkResultsValue("Student Email", email)
                 .checkResultsValue("Gender", gender)
@@ -57,7 +61,9 @@ public class RegistrationFormTests extends TestBase {
 //                .checkResultsValue("Picture", nameFile)
                 .checkResultsValue("Address", address)
                 .checkResultsValue("State and City", state+" "+ city);
-
+        });
+        step("Закрыть модальное окно", () -> {
         button.clickButton("#closeLargeModal");
+        });
     }
 }

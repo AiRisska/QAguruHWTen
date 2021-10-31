@@ -12,7 +12,6 @@ public class CheckingRegPage {
             checkTable = $(".table-responsive");
 
     public CheckingRegPage checkResultsValue(String key, String value) {
-//       $x("//td[text()='"+key+"']").parent().shouldHave(text(value));
         checkTable.$(byText(key)).parent().shouldHave(text(value));
         return this;
     }

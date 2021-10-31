@@ -20,12 +20,7 @@ public class CalendarComponent extends TestData {
     }
     public void setDate(String day, String month, String year) {
         $("#dateOfBirthInput").click();
-/*        String selector = ".react-datepicker__day--0%s:not(react-datepicker__day--outside-month)";
-        $(String.format(selector,day)).click();
-        String selector1 = ".react-datepicker__%s-select";
-        $(String.format(selector1,"month")).selectOption(month);
-        $(String.format(selector1,"year")).selectOption(year);
-*/        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__month-select").selectOption(month);
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__day--0"+ day
                 +":not(react-datepicker__day--outside-month)").click();

@@ -8,8 +8,6 @@ public class OpenPages {
     public void openRegistration(String title) {
         open("https://demoqa.com/automation-practice-form");
         check.checkHaveText(".practice-form-wrapper", title);
-//        $(".practice-form-wrapper").shouldHave(text(title));
-
     }
 }
 

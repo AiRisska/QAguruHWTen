@@ -9,8 +9,6 @@ public class RegistrationPage {
 
     public CalendarComponent calendar = new CalendarComponent();
 
-//для юзабельности стоит использовать scrollTo()
-
     public RegistrationPage setText(String key, String value) {
         $(key).setValue(value);
         return this;
