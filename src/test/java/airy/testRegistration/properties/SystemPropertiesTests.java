@@ -52,4 +52,17 @@ public class SystemPropertiesTests {
         //gradle clean properties_tests -Dbrowser=opera
         //получим вывод: opera
     }
+
+    //задаем несколько параметров через запятую
+    @Test
+    @Tag("properties")
+    void someTest5() {
+        String browser = System.getProperty("browser", "chrome");
+        String version = System.getProperty("version", "91");
+        String browserSize = System.getProperty("browserSize", "300x300");
+        System.out.println("Browser "+browser+" ver. "+version+" size "+browserSize);
+        //в командной строке введем другие данные
+        //gradle clean properties_tests -Dbrowser=opera -Dversion=93
+        //ответ:    Browser opera ver. 93 size 300x300
+    }
 }
