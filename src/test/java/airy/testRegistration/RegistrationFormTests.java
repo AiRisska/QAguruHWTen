@@ -5,11 +5,13 @@ import airy.pages.CheckingRegPage;
 import airy.pages.ClickOnKey;
 import airy.pages.OpenPages;
 import airy.pages.RegistrationPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static airy.TestData.*;
 import static io.qameta.allure.Allure.step;
 
+@Tag("regForm")
 public class RegistrationFormTests extends TestBase {
 
     OpenPages open = new OpenPages();

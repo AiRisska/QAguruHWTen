@@ -57,4 +57,9 @@ task properties_tests(type: Test) {
     }
 }
 
+task form_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags ("regForm")
+    }
+}
 
