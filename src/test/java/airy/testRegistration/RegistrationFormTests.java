@@ -5,6 +5,7 @@ import airy.pages.CheckingRegPage;
 import airy.pages.ClickOnKey;
 import airy.pages.OpenPages;
 import airy.pages.RegistrationPage;
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
