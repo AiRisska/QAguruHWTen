@@ -1,5 +1,6 @@
 package airy.pages;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class OpenPages {
@@ -8,6 +9,7 @@ public class OpenPages {
     public void openRegistration(String title) {
         open("https://demoqa.com/automation-practice-form");
         check.checkHaveText(".practice-form-wrapper", title);
+        $("#close-fixedban").click();
     }
 }
 

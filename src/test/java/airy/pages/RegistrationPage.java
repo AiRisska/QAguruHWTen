@@ -1,6 +1,7 @@
 package airy.pages;
 
 import airy.pages.components.CalendarComponent;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -31,6 +32,7 @@ public class RegistrationPage {
 
     public RegistrationPage clickOnTextInWrapper(String id, String wrapper, String value) {
         ClickOnKey click = new ClickOnKey();
+        $(id).scrollTo();
         click.clickField(id);
         $(wrapper).$(byText(value)).click();
         return this;

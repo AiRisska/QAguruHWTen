@@ -10,8 +10,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static java.lang.String.format;
-
 
 public class TestBase {
     public static HwConfig hw = ConfigFactory.create(HwConfig.class);
@@ -25,12 +23,12 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-//        Configuration.browserSize = defaults.browserSize();
+        Configuration.browserSize = "1920x1080";
         String url=hw.url();
         String login=hw.login();
         String password=hw.password();
 
-        Configuration.remote = format("https://%s:%s@%s",login,password,url);
+//        Configuration.remote = format("https://%s:%s@%s",login,password,url);
     }
 
     @AfterEach
