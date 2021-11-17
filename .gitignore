@@ -22,6 +22,7 @@
 *.tar.gz
 *.rar
 *.iml
+./src/test/resources/notifications/*.json
 
 # Project gen files
 .idea
