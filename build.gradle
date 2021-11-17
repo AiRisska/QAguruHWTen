@@ -63,7 +63,19 @@ task form_tests(type: Test) {
     }
 }
 
+task example_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags ("empty")
+    }
+}
 /*
-java  \ "-DprojectName=${PROJECT_NAME}" \ "-Denv=${ENVIRONMENT}" \ "-DreportLink=${BUILD_URL}" \ "-Dcomm=Test off" \ "-Dconfig.file=src/test/resources/notifications/telegram.json" \ -jar allure-notifications-3.1.2.jar
 java  "-DprojectName=${PROJECT_NAME}" "-Denv=${ENVIRONMENT}" "-DreportLink=${BUILD_URL}" "-Dcomm=Any comment here" "-Dconfig.file=src/test/resources/notifications/telegram.json" -jar allure-notifications-3.1.2.jar
+
+java  \
+"-DprojectName=${PROJECT_NAME}" \
+"-Denv=${ENVIRONMENT}" \
+"-DreportLink=${BUILD_URL}" \
+"-Dcomm=Any comment here" \
+"-Dconfig.file=src/test/resources/notifications/telegram.json" \
+-jar allure-notifications-3.1.2.jar
 */
